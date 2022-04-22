@@ -1,0 +1,57 @@
+.day-layout {
+
+  &__body {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+  }
+
+  &__aside {
+    flex: .15;
+    background: #fafafa;
+  }
+
+  &__article {
+    flex: 1.85;
+  }
+
+}
+
+.aside {
+  
+  &__static-time-element {
+    display: block;
+    padding-top: 93px;
+    text-align: end;
+    padding-right: .5rem;
+    height: 100px;
+  }
+
+}
+
+.article {
+
+  &__header{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+  }
+
+  &__columns {
+    height: 100px;
+    border: 1px solid #fafafa;
+
+  }
+
+}
+
+.header-wrapper {
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+}
