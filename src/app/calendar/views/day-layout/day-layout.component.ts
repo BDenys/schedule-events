@@ -12,11 +12,15 @@ export class DayLayoutComponent implements OnInit {
 
   constructor(
     private calendarService: CalendarService
-  ) { 
-    this.columns = Array( 15 ).fill( '' ).map( (_: string, index: number): number => index );
-  }
+  ) {}
 
   ngOnInit(): void {
+   this.initialFunc();
+  }
+
+  private initialFunc(): void {
+    this.columns = Array( 15 ).fill( '' ).map( (_: string, index: number): number => index );
+
     this.staticTime = this.calendarService.staticTime;
   }
 

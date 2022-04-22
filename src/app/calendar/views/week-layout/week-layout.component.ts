@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarService } from '../../services/calendar.service';
 
 @Component({
   selector: 'app-week-layout',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeekLayoutComponent implements OnInit {
 
-  constructor() { }
+  public rows: number[];
+  public columns: number[];
+  public staticTime: number[];
+  public staticWeekDayDisplay: string[];
+
+  constructor(
+    private calendarService: CalendarService
+  ) {}
 
   ngOnInit(): void {
+    this.initialFunc();
+  }
+
+  private initialFunc(): void {
+    this.rows = Array( 7 ).fill( '' ).map( (_: string, index: number): number => index );
+    this.columns = Array( 15 ).fill( '' ).map( (_: string, index: number): number => index );
+    
+    this.staticTime = this.calendarService.staticTime;
+    this.staticWeekDayDisplay = this.calendarService.staticWeekDayDisplay;
+  }
+
+  public changeWeekIndex(step: number):void {
+
   }
 
 }
