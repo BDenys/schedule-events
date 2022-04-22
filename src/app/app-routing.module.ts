@@ -4,6 +4,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
 
 const routes: Routes = [
   {path: 'calendar', loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarModule)},
+  {path: '', redirectTo: '/calendar/day', pathMatch: 'full'},
   {path: '**', data: {title: 'not-found'}, component: PageNotFoundComponent }
 ];
 
