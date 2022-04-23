@@ -11,7 +11,7 @@ export class WeekLayoutComponent implements OnInit {
   public rows: number[];
   public columns: number[];
   public staticTime: number[];
-  public staticWeekDayDisplay: string[];
+  public staticWeekDaysDisplay: string[];
 
   constructor(
     private calendarService: CalendarService
@@ -26,7 +26,7 @@ export class WeekLayoutComponent implements OnInit {
     this.columns = Array( 15 ).fill( '' ).map( (_: string, index: number): number => index );
     
     this.staticTime = this.calendarService.staticTime;
-    this.staticWeekDayDisplay = this.calendarService.staticWeekDayDisplay;
+    this.staticWeekDaysDisplay = this.calendarService.staticWeekDaysDisplay;
   }
 
   public changeWeekIndex(step: number):void {
