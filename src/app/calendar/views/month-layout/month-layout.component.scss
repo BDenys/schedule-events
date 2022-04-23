@@ -1,0 +1,38 @@
+
+.month-layout {
+  display: flex;
+  justify-content: center;
+
+  &__body {
+  }
+}
+
+.calendar{ 
+
+  width: 875px;
+
+  &__week-days {
+    display: flex;
+  }
+
+  &__week-day {
+    text-align: center;
+  }
+
+  &__grid{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__day, &__week-day  {
+    width: 125px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border-right: 1px solid black;
+    border: 1px solid black;
+   
+  }
+
+}

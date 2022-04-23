@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CalendarService {  
-
-  public staticWeekDayDisplay: string[] = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+  public staticWeekDays: string[] = [ 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота','воскресенье' ];
+  public staticWeekDaysDisplay: string[] = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
 
   public staticTime = Array(15).fill('').map((_: string, index: number): number => {
     const defaultPoint = 7;
