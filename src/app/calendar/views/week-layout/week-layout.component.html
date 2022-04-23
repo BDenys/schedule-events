@@ -1,1 +1,41 @@
-<p>week-layout works!</p>
+<section class="week-layout">
+  <main class="week-layout__body">
+    <aside class="week-layout__aside aside">
+      <section class="aside__static-time">
+        <small 
+          class="aside__static-time-element" 
+          *ngFor="let element of staticTime">
+            {{ element < 10 ? '0' + element + ':00' : element + ':00' }}
+        </small>
+      </section>
+    </aside>
+
+    <article class="week-layout__article article"> 
+      
+      <header class="article__header">
+        <section
+          class="article__week-days">
+            <section class="article__week-day" 
+              *ngFor="let day of staticWeekDayDisplay">
+              {{day}}
+            </section>
+        </section>
+      </header>
+
+      <main class="article__body">
+        <section class="article__grid">
+
+          <section class="article__rows"
+             *ngFor="let row of rows">
+              <section class="article__columns" *ngFor="let column of columns">
+                {{ row }}
+                {{ column }}
+              </section>
+          </section>
+        
+        </section>
+      </main>
+
+    </article>
+  </main>
+</section>

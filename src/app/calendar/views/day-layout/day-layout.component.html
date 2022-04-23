@@ -1,1 +1,36 @@
-<p>day-layout works!</p>
+<section class="day-layout">
+  <main class="day-layout__body">
+    <aside class="day-layout__aside aside">
+      <section class="aside__static-time">
+        <small 
+          class="aside__static-time-element" 
+          *ngFor="let element of staticTime">
+            {{ element < 10 ? '0' + element + ':00' : element + ':00' }}
+        </small>
+      </section>
+    </aside>
+
+    <article class="day-layout__article article"> 
+      <header class="article__header">
+        <section class="article__header-wrapper header-wrapper">
+          <button class="article__actions" 
+            (click)="changeDay(-1)"
+          >prev</button>
+          
+          <section class="article__title">
+            22
+          </section>
+
+          <button class="article__actions" 
+            (click)="changeDay(1)"
+          >next</button>
+        </section>
+      </header>
+
+      <main class="article__body">
+        <section class="article__columns" *ngFor="let column of columns"></section>
+      </main>
+
+    </article>
+  </main>
+</section>
