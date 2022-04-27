@@ -1,36 +1,52 @@
 <section class="day-layout">
+  <header class="day-layout__header">
+    <section class="day-layout__header-wrapper header-wrapper">
+      <button class="day-layout__actions"
+              (click)="changeDay(-1)"
+      >prev</button>
+
+      <section class="day-layout__title">
+        <small>{{ currentDay - 1 !== 0 ? currentDay - 1 : null }}</small>
+        <section class="day-layout__title-main">
+          {{currentDay }}
+        </section>
+        <small>{{ currentDay + 1 > daysInCurrentMonth ? null : currentDay + 1}}</small>
+      </section>
+
+      <button class="day-layout__actions"
+              (click)="changeDay(1)"
+      >next</button>
+    </section>
+  </header>
+
   <main class="day-layout__body">
-    <aside class="day-layout__aside aside">
-      <section class="aside__static-time">
-        <small 
-          class="aside__static-time-element" 
-          *ngFor="let element of staticTime">
-            {{ element < 10 ? '0' + element + ':00' : element + ':00' }}
+    <aside class="article aside">
+      <section class="article__static-time">
+        <small class="article__static-time-element"
+               *ngFor="let element of staticTime">
+          {{ element < 10 ? '0' + element + ':00' : element + ':00' }}
         </small>
       </section>
     </aside>
 
-    <article class="day-layout__article article"> 
-      <header class="article__header">
-        <section class="article__header-wrapper header-wrapper">
-          <button class="article__actions" 
-            (click)="changeDay(-1)"
-          >prev</button>
-          
-          <section class="article__title">
-            22
-          </section>
-
-          <button class="article__actions" 
-            (click)="changeDay(1)"
-          >next</button>
-        </section>
-      </header>
-
+    <article class="day-layout__article article">
       <main class="article__body">
-        <section class="article__columns" *ngFor="let column of columns"></section>
+
+        <section class="article__columns"
+                 *ngFor="let column of columns"
+                 (click)="createEvent()"
+        ></section>
+
+        <section class="article__events"
+                 *ngFor="let event of calendar[currentDay - 1].events"
+        ></section>
       </main>
 
     </article>
   </main>
+  <app-modal-window *ngIf="(toggleModalStatus | async)">
+    <app-create-event></app-create-event>
+  </app-modal-window>
 </section>
+
+

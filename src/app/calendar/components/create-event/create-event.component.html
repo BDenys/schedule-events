@@ -1,0 +1,63 @@
+<section class="create-event">
+
+  <header class="calendar-event__header header">
+    <section class="header__title">
+      Create Event
+    </section>
+    <section class="header__actions">
+      <button (click)="closeModal()">close</button>
+    </section>
+  </header>
+
+  <main class="create-event__body">
+    <form  class="create-event__form form" [formGroup]="form" (ngSubmit)="submitHandler()">
+      <section class="form__block">
+        <section class="form__field">
+          <select formControlName="startHour">
+            <option
+              [selected]="hour.title === startHour"
+              *ngFor="let hour of hours"
+            >{{ hour.title < 10 ? '0' + hour.title : hour.title }}</option>
+          </select>
+        </section>
+        <section class="form__separator">
+          :
+        </section>
+        <section class="form__field">
+          <select formControlName="startHour">
+            <option
+              [selected]="minute.title === startMinutes"
+              *ngFor="let minute of minutes"
+            >{{ minute.title < 10 ? '0' + minute.title : minute.title }}</option>
+          </select>
+        </section>
+
+        <section class="form__duration">
+          <select
+            formControlName="duration"
+            class='create-event__duration'
+            name='duration'
+          >
+            <option
+              [selected]="+dur.value === 30"
+              [ngValue]="dur.value"
+              *ngFor="let dur of durationStatic"
+            >{{dur.title}}</option>
+          </select>
+        </section>
+
+      </section>
+      <button type="submit">create</button>
+    </form>
+    Result: {{ result }}
+  </main>
+
+<!--  -->
+<!--  <footer class="create-event">-->
+<!--    <section class="create-event__actions">-->
+<!--      <button (click)="">Crete</button>-->
+<!--    </section>-->
+<!--  </footer>-->
+
+
+</section>

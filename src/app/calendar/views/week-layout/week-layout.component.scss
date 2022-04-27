@@ -1,5 +1,13 @@
 .week-layout {
 
+  &__header {
+    width: 875px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+  }
+
   &__body {
     width: 100%;
     display: flex;
@@ -19,10 +27,10 @@
 }
 
 .aside {
-  
+
   &__static-time-element {
     display: block;
-    padding-top: 93px;
+    padding-top: 100px;
     text-align: end;
     padding-right: .5rem;
     height: 100px;
@@ -33,9 +41,11 @@
 .article {
 
   &__header{
+    width: 875px;
     display: flex;
+    flex-direction: column;
     justify-content: start;
-    align-items: center;
+    //align-items: center;
   }
 
   &__week-days {
@@ -43,9 +53,12 @@
   }
 
   &__week-day {
-    width: 150px;
-    height: 100px;
-    background-color: #d7d7d7;
+    width: 125px;
+    height: 50px;
+    display: flex;
+    background: #fafafa;
+    justify-content: center;
+    align-items: center;
     border-right: 1px solid white;
   }
 
@@ -53,11 +66,21 @@
     display: flex;
   }
 
-  &__rows, &__columns, &__week-day  {
-    width: 150px;
+  &__rows, &__columns  {
+    width: 125px;
     height: 100px;
     border-right: 1px solid #d7d7d7;
     border-bottom: 1px solid #d7d7d7;
   }
+
+}
+
+.actions {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.static-days {
 
 }

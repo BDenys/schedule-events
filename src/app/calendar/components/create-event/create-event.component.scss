@@ -1,0 +1,26 @@
+.create-event {
+  padding: 1rem;
+  width: 500px;
+  height: 400px;
+  border-radius: 5px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__body {
+
+  }
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  &__block {
+    display: flex;
+  }
+}

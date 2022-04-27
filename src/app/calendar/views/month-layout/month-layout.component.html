@@ -1,10 +1,5 @@
 <section class="month-layout">
 
-  <header>
-    <button (click)="changeMonth(-1)">prev</button>
-    <button (click)="changeMonth(1)">next</button>
-  </header>
-
   <main class="month-layout__body">
     <section class="month-layout__calendar calendar">
       <header class="calendar__header">
@@ -20,7 +15,7 @@
       <main class="calendar__grid">
         <section
           class="calendar__day"
-          *ngFor="let day of calendar; let i = index"
+          *ngFor="let day of (calendar$ | async); let i = index"
           [ngClass]="{
             notEmpty: day.events.length !== 0,
             currentDay: day.current,

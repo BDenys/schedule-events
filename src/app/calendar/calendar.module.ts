@@ -6,6 +6,9 @@ import { CalendarMainLayoutComponent } from './views/calendar-main-layout/calend
 import { DayLayoutComponent } from './views/day-layout/day-layout.component';
 import { WeekLayoutComponent } from './views/week-layout/week-layout.component';
 import { MonthLayoutComponent } from './views/month-layout/month-layout.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
+import { CreateEventComponent } from './components/create-event/create-event.component';
 
 const routes: Routes = [
   { path: '', component: CalendarMainLayoutComponent,data: {title: 'calendar'}, children: [
@@ -21,11 +24,13 @@ const routes: Routes = [
     CalendarMainLayoutComponent,
     DayLayoutComponent,
     WeekLayoutComponent,
-    MonthLayoutComponent
+    MonthLayoutComponent,
+    CreateEventComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    SharedModule,
+    RouterModule.forChild(routes),
   ],
   exports: [RouterModule]
 })
