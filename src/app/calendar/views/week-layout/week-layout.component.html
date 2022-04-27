@@ -1,24 +1,42 @@
 <section class="week-layout">
+
+  <header class="week-layout__header">
+    <section class="actions">
+      <button (click)="changeWeekIndex(-1)">prev change week</button>
+      <section class="title">
+        {{  stringWeekArray[indexCurrentWeek]  }}
+      </section>
+      <button (click)="changeWeekIndex(1)">next change week</button>
+    </section>
+  </header>
+
+
   <main class="week-layout__body">
     <aside class="week-layout__aside aside">
       <section class="aside__static-time">
-        <small 
-          class="aside__static-time-element" 
+        <small
+          class="aside__static-time-element"
           *ngFor="let element of staticTime">
             {{ element < 10 ? '0' + element + ':00' : element + ':00' }}
         </small>
       </section>
     </aside>
 
-    <article class="week-layout__article article"> 
-      
+    <article class="week-layout__article article">
+
       <header class="article__header">
-        <section
-          class="article__week-days">
-            <section class="article__week-day" 
+        <section class="article__week-days static-days">
+            <section class="article__week-day"
               *ngFor="let day of staticWeekDaysDisplay">
               {{day}}
             </section>
+        </section>
+
+        <section class="article__week-days">
+          <section class="article__week-day"
+                   *ngFor="let day of weekCalendarDays[indexCurrentWeek]">
+            {{day}}
+          </section>
         </section>
       </header>
 
@@ -32,7 +50,7 @@
                 {{ column }}
               </section>
           </section>
-        
+
         </section>
       </main>
 

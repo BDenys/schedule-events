@@ -1,0 +1,27 @@
+.calendar-layout {
+
+  &__header, &__menu, &__date {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__header {
+    height: 80px;
+  }
+
+  &__list {
+    padding-top: 0.25rem;
+    padding-right: 1rem;
+  }
+
+  &__actions {
+    text-align: center;
+  }
+
+}
+
+.title {
+  width: 100px;
+  text-align: center;
+}
